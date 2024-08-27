@@ -1,6 +1,5 @@
 plugins {
     application
-    `maven-publish`
 }
 
 application {
@@ -14,20 +13,15 @@ repositories {
 dependencies {
     implementation(project(":maligna"))
     implementation(libs.commons.cli)
-    testImplementation(libs.junit)
-    testImplementation(libs.io.takari.junit.takari.cpsuite)
+    implementation(libs.commons.logging)
+    implementation(libs.junit)
+    implementation(libs.io.takari.junit.takari.cpsuite)
 }
 
 group = "net.loomchild"
 version = "3.0.2-SNAPSHOT"
 description = "maligna-ui"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
-
-publishing {
-    publications.create<MavenPublication>("maven") {
-        from(components["java"])
-    }
-}
 
 tasks.withType<JavaCompile>() {
     options.encoding = "UTF-8"
