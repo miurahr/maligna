@@ -1,6 +1,7 @@
 plugins {
     `java-library`
     `maven-publish`
+    signing
 }
 
 repositories {
@@ -17,26 +18,20 @@ dependencies {
     runtimeOnly(libs.jaxb.runtime)
     testImplementation(libs.junit)
     testImplementation(libs.io.takari.junit.takari.cpsuite)
-    testImplementation(libs.jaxb.api)
-    testImplementation(libs.jaxb.core)
     testRuntimeOnly(libs.jaxb.runtime)
     jaxb(libs.jaxb.xjc)
 }
 
-group = "net.loomchild"
+group = "tokyo.northside"
 version = "3.0.2-SNAPSHOT"
 description = "maligna"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(8))
+    }
     withSourcesJar()
     withJavadocJar()
-}
-
-publishing {
-    publications.create<MavenPublication>("maven") {
-        from(components["java"])
-    }
 }
 
 tasks.withType<JavaCompile>() {
@@ -93,4 +88,42 @@ sourceSets {
 
 tasks.withType(Jar::class) {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.jar {
+    manifest {
+        attributes("Automatic-Module-Name" to "net.loomchild.mALIGNa")
+    }
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+            setGroupId("tokyo.northside")
+            pom {
+                name = "maligna"
+                description = "maligna"
+                url.set("https://github.com/miurahr/maligna")
+                licenses {
+                    license {
+                        name.set("The MIT License(MIT)")
+                        url.set("https://opensource.org/license/MIT")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("miurahr")
+                        name.set("Hiroshi Miura")
+                        email.set("miurahr@linux.com")
+                    }
+                }
+                scm {
+                    connection.set("scm:git:git://github.com/miurahr/maligna.git")
+                    developerConnection.set("scm:git:git://github.com/miurahr/maligna.git")
+                    url.set("https://github.com/miurahr/maligna")
+                }
+            }
+        }
+    }
 }

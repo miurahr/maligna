@@ -1,5 +1,6 @@
 plugins {
     application
+    java
 }
 
 application {
