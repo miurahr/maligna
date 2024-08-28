@@ -1,7 +1,7 @@
 [versions]
 commons-cli-commons-cli = "1.2"
 io-takari-junit-takari-cpsuite = "1.2.7"
-junit-junit = "4.13.1"
+junit-junit = "4.13.2"
 net-loomchild-segment = "2.0.0"
 jaxb4_api = "4.0.2"
 jaxb = "4.0.5"
