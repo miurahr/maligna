@@ -19,7 +19,7 @@ dependencies {
 }
 
 group = "net.loomchild"
-version = "3.0.2-SNAPSHOT"
+version = "4.0.0"
 description = "maligna-ui"
 
 java {

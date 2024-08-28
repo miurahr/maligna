@@ -27,7 +27,7 @@ dependencies {
 }
 
 group = "tokyo.northside"
-version = "4.0.0-SNAPSHOT"
+version = "4.0.0"
 description = "maligna"
 
 java {
