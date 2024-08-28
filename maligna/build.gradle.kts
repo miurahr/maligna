@@ -1,3 +1,5 @@
+import com.github.spotbugs.snom.Confidence
+
 plugins {
     `java-library`
     `maven-publish`
@@ -127,6 +129,20 @@ publishing {
                     url.set("https://github.com/miurahr/maligna")
                 }
             }
+        }
+    }
+}
+
+spotbugs {
+    reportLevel = Confidence.valueOf("HIGH")
+    tasks.spotbugsMain {
+        reports.create("html") {
+            required.set(true)
+        }
+    }
+    tasks.spotbugsTest {
+        reports.create("html") {
+            required.set(true)
         }
     }
 }
