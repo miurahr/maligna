@@ -70,3 +70,11 @@
 * Migrate to Maven build
 * Publish maligna JAR on Maven Central
 
+## version 4.0 2024-08
+
+* Fork the project and change a group id to "tokyo.northside".
+* Bump JAXB API and runtime to version 4.0.
+* Migrate to a Gradle build system.
+* Bump build on Java 11.
+* Drop commons-logging dependency.
+* Bump commons-cli@1.9.0
