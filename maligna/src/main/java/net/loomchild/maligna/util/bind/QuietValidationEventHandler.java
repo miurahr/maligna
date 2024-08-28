@@ -1,7 +1,7 @@
 package net.loomchild.maligna.util.bind;
 
-import javax.xml.bind.ValidationEvent;
-import javax.xml.bind.ValidationEventHandler;
+import jakarta.xml.bind.ValidationEvent;
+import jakarta.xml.bind.ValidationEventHandler;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

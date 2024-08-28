@@ -2,6 +2,7 @@ plugins {
     `java-library`
     `maven-publish`
     signing
+    alias(libs.plugins.spotbugs)
 }
 
 repositories {
@@ -12,18 +13,20 @@ val jaxb: Configuration by configurations.creating
 
 dependencies {
     implementation(libs.net.loomchild.segment)
-    implementation(libs.jaxb.api)
-    implementation(libs.jaxb.core)
+    implementation(libs.jaxb4.api)
+    implementation(libs.jaxb4.core)
     implementation(libs.commons.logging)
-    runtimeOnly(libs.jaxb.runtime)
+    runtimeOnly(libs.jaxb4.runtime)
     testImplementation(libs.junit)
     testImplementation(libs.io.takari.junit.takari.cpsuite)
-    testRuntimeOnly(libs.jaxb.runtime)
-    jaxb(libs.jaxb.xjc)
+    testRuntimeOnly(libs.jaxb4.runtime)
+    jaxb(libs.jaxb4.xjc)
+    jaxb(libs.jaxb4.api)
+    jaxb(libs.jaxb4.runtime)
 }
 
 group = "tokyo.northside"
-version = "3.0.2-SNAPSHOT"
+version = "4.0.0-SNAPSHOT"
 description = "maligna"
 
 java {
