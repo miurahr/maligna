@@ -1,5 +1,5 @@
 [versions]
-commons-cli-commons-cli = "1.2"
+commons-cli-commons-cli = "1.9.0"
 io-takari-junit-takari-cpsuite = "1.2.7"
 junit-junit = "4.13.2"
 net-loomchild-segment = "2.0.0"
