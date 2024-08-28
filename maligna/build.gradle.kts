@@ -145,3 +145,27 @@ spotbugs {
         }
     }
 }
+
+val signKey = listOf("signingKey", "signing.keyId", "signing.gnupg.keyName").find {project.hasProperty(it)}
+tasks.withType<Sign> {
+    onlyIf { signKey != null && !project.version.toString().endsWith("-SNAPSHOT") }
+}
+signing {
+    when (signKey) {
+        "signingKey" -> {
+            val signingKey: String? by project
+            val signingPassword: String? by project
+            useInMemoryPgpKeys(signingKey, signingPassword)
+        }
+        "signing.keyId" -> {
+            val keyId: String? by project
+            val password: String? by project
+            val secretKeyRingFile: String? by project // e.g. gpg --export-secret-keys > secring.gpg
+            useInMemoryPgpKeys(keyId, password, secretKeyRingFile)
+        }
+        "signing.gnupg.keyName" -> {
+            useGpgCmd()
+        }
+    }
+    sign(publishing.publications["mavenJava"])
+}

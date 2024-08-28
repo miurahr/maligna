@@ -7,7 +7,7 @@ val sonatypePassword: String? by project
 
 nexusPublishing.repositories {
     sonatype {
-        // stagingProfileId = "121f28671d24dc"
+        stagingProfileId = "121f28671d24dc"
         if (sonatypeUsername != null && sonatypePassword != null) {
             username.set(sonatypeUsername)
             password.set(sonatypePassword)
