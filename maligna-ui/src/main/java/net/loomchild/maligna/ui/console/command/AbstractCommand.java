@@ -24,15 +24,12 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.Parser;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 
 
 public abstract class AbstractCommand implements Command {
 	
-	Log log = LogFactory.getLog(AbstractCommand.class);
-	
+	Logger log = Logger.getLogger(AbstractCommand.class.getName());
+
 	private BufferedReader in;
 	private PrintWriter out;
 	private PrintWriter err;
@@ -74,11 +71,11 @@ public abstract class AbstractCommand implements Command {
 				run(commandLine);
 			}
 		} catch (CommandException e) {
-			log.debug("Command exception.", e);
+			log.log(Level.FINE, "Command exception.", e);
 			err.println(e.getMessage());
 			printUsage();
 		} catch (Exception e) {
-			log.error("Unknown exception", e);
+			log.log(Level.SEVERE, "Unknown exception", e);
 		}
 	}
 
@@ -136,12 +133,12 @@ public abstract class AbstractCommand implements Command {
 		for (Handler handler : logger.getHandlers()) {
 			handler.setLevel(Level.ALL);
 		}
-		log.debug("Setting verbosity level to " + verbosity + ".");
+		log.log(Level.FINE, "Setting verbosity level to " + verbosity + ".");
 	}
 	
 	private void setProgress(String verbosity) {
 		if (!"quiet".equals(verbosity)) {
-			log.debug("Enabling progress meter.");
+			log.log(Level.FINE, "Enabling progress meter.");
 			WriterProgressObserver progressObserver = new WriterProgressObserver(new OutputStreamWriter(System.err), 40);
 			ProgressManager.getInstance().registerProgressObserver(progressObserver);
 		}

@@ -1,6 +1,5 @@
 [versions]
 commons-cli-commons-cli = "1.2"
-commons-logging-commons-logging = "1.2"
 io-takari-junit-takari-cpsuite = "1.2.7"
 junit-junit = "4.13.1"
 net-loomchild-segment = "2.0.0"
@@ -9,7 +8,6 @@ jaxb = "4.0.5"
 
 [libraries]
 commons-cli = { module = "commons-cli:commons-cli", version.ref = "commons-cli-commons-cli" }
-commons-logging = { module = "commons-logging:commons-logging", version.ref = "commons-logging-commons-logging" }
 io-takari-junit-takari-cpsuite = { module = "io.takari.junit:takari-cpsuite", version.ref = "io-takari-junit-takari-cpsuite" }
 junit = { module = "junit:junit", version.ref = "junit-junit" }
 net-loomchild-segment = { module = "net.loomchild:segment", version.ref = "net-loomchild-segment" }

@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import net.loomchild.maligna.ui.console.command.Command;
 import net.loomchild.maligna.ui.console.command.CommandFactory;
 import net.loomchild.maligna.util.Version;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 public class Maligna {
 	
-	private static final Log log = LogFactory.getLog(Maligna.class);
+	private static final Logger log = Logger.getLogger(Maligna.class.getName());
 	
 	public static final String MAIN_COMMAND_NAME = "maligna";
 	
@@ -57,7 +57,7 @@ public class Maligna {
 				}
 			}
 		} catch (Exception e) {
-			log.fatal("Unknown exception.", e);
+			log.log(Level.SEVERE, "Unknown exception.", e);
 		}
 	}
 	

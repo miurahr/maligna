@@ -17,7 +17,6 @@ dependencies {
     implementation(libs.net.loomchild.segment)
     implementation(libs.jaxb4.api)
     implementation(libs.jaxb4.core)
-    implementation(libs.commons.logging)
     runtimeOnly(libs.jaxb4.runtime)
     testImplementation(libs.junit)
     testImplementation(libs.io.takari.junit.takari.cpsuite)

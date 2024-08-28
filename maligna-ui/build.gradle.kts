@@ -14,7 +14,6 @@ repositories {
 dependencies {
     implementation(project(":maligna"))
     implementation(libs.commons.cli)
-    implementation(libs.commons.logging)
     implementation(libs.junit)
     implementation(libs.io.takari.junit.takari.cpsuite)
 }
