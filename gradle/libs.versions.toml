@@ -2,18 +2,17 @@
 commons-cli-commons-cli = "1.9.0"
 io-takari-junit-takari-cpsuite = "1.2.7"
 junit-junit = "4.13.2"
-net-loomchild-segment = "2.0.0"
-jaxb4_api = "4.0.2"
-jaxb = "4.0.5"
+net-loomchild-segment = "2.0.3"
+jaxb4_api = "4.0.4"
+jaxb = "4.0.6"
 
 [libraries]
 commons-cli = { module = "commons-cli:commons-cli", version.ref = "commons-cli-commons-cli" }
 io-takari-junit-takari-cpsuite = { module = "io.takari.junit:takari-cpsuite", version.ref = "io-takari-junit-takari-cpsuite" }
 junit = { module = "junit:junit", version.ref = "junit-junit" }
 net-loomchild-segment = { module = "net.loomchild:segment", version.ref = "net-loomchild-segment" }
-jaxb4-api = {group = "jakarta.xml.bind", name = "jakarta.xml.bind-api", version = "jaxb4_api"}
+jaxb4-api = {group = "jakarta.xml.bind", name = "jakarta.xml.bind-api", version.ref = "jaxb4_api"}
 jaxb4-xjc = {group = "org.glassfish.jaxb", name = "jaxb-xjc", version.ref = "jaxb"}
-jaxb4-core = {group = "org.glassfish.jaxb", name = "jaxb-core", version.ref = "jaxb"}
 jaxb4-runtime = {group = "org.glassfish.jaxb", name = "jaxb-runtime", version.ref = "jaxb"}
 
 [plugins]

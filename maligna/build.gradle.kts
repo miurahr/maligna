@@ -14,9 +14,12 @@ repositories {
 val jaxb: Configuration by configurations.creating
 
 dependencies {
-    implementation(libs.net.loomchild.segment)
+    implementation(libs.net.loomchild.segment) {
+        exclude("javax.xml.bind", "jaxb-api")
+        exclude("com.sun.xml.bind", "jaxb-core")
+        exclude("com.sun.xml.bind", "jaxb-impl")
+    }
     implementation(libs.jaxb4.api)
-    implementation(libs.jaxb4.core)
     runtimeOnly(libs.jaxb4.runtime)
     testImplementation(libs.junit)
     testImplementation(libs.io.takari.junit.takari.cpsuite)
