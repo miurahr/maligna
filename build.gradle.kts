@@ -12,7 +12,8 @@ val sonatypePassword: String? by project
 
 nexusPublishing.repositories {
     sonatype {
-        stagingProfileId = "121f28671d24dc"
+        nexusUrl.set(uri("https://ossrh-staging-api.central.sonatype.com/service/local/"))
+        snapshotRepositoryUrl.set(uri("https://central.sonatype.com/repository/maven-snapshots/"))
         if (sonatypeUsername != null && sonatypePassword != null) {
             username.set(sonatypeUsername)
             password.set(sonatypePassword)
