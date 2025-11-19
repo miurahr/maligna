@@ -2,6 +2,11 @@ plugins {
     alias(libs.plugins.nexus.publish)
 }
 
+tasks.wrapper {
+    distributionType = Wrapper.DistributionType.BIN
+    gradleVersion = "8.14.2"
+}
+
 val sonatypeUsername: String? by project
 val sonatypePassword: String? by project
 
