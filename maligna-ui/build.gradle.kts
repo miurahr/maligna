@@ -18,8 +18,6 @@ dependencies {
     implementation(libs.io.takari.junit.takari.cpsuite)
 }
 
-group = "net.loomchild"
-version = "4.0.1"
 description = "maligna-ui"
 
 java {

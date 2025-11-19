@@ -29,8 +29,6 @@ dependencies {
     jaxb(libs.jaxb4.runtime)
 }
 
-group = "tokyo.northside"
-version = "4.0.1"
 description = "maligna"
 
 java {
