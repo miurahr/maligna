@@ -78,3 +78,10 @@
 * Bump build on Java 11.
 * Drop commons-logging dependency.
 * Bump commons-cli@1.9.0
+
+## version 4.0.2 2026-05-25
+
+* Bump jaxb-api@4.0.5
+* Bump jaxb-core@4.0.8
+* Bump spotbugs@6.0.18
+* Allow build on Java 17 and 21, but compatible with Java 11

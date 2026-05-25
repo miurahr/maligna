@@ -20,6 +20,7 @@ dependencies {
         exclude("com.sun.xml.bind", "jaxb-impl")
     }
     implementation(libs.jaxb4.api)
+    implementation(libs.jaxb4.core)
     runtimeOnly(libs.jaxb4.runtime)
     testImplementation(libs.junit)
     testImplementation(libs.io.takari.junit.takari.cpsuite)
@@ -32,9 +33,8 @@ dependencies {
 description = "maligna"
 
 java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
-    }
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
     withSourcesJar()
     withJavadocJar()
 }
