@@ -85,3 +85,8 @@
 * Bump jaxb-core@4.0.8
 * Bump spotbugs@6.0.18
 * Allow build on Java 17 and 21, but compatible with Java 11
+
+## version 4.0.3 2026-05-27
+
+* Migrate to jcl-over-slf4j@2.0.17
+* Bump segment@4.0.1
