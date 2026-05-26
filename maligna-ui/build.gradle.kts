@@ -16,6 +16,7 @@ dependencies {
     implementation(libs.commons.cli)
     implementation(libs.junit)
     implementation(libs.io.takari.junit.takari.cpsuite)
+    runtimeOnly(libs.slf4j.simple)
 }
 
 description = "maligna-ui"

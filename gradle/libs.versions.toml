@@ -3,18 +3,24 @@ commons-cli-commons-cli = "1.9.0"
 io-takari-junit-takari-cpsuite = "1.2.7"
 junit-junit = "4.13.2"
 net-loomchild-segment = "2.0.3"
+tokyo-northside-segment = "4.0.1"
 jaxb4_api = "4.0.5"
 jaxb = "4.0.8"
+slf4j = "2.0.17"
 
 [libraries]
 commons-cli = { module = "commons-cli:commons-cli", version.ref = "commons-cli-commons-cli" }
 io-takari-junit-takari-cpsuite = { module = "io.takari.junit:takari-cpsuite", version.ref = "io-takari-junit-takari-cpsuite" }
 junit = { module = "junit:junit", version.ref = "junit-junit" }
 net-loomchild-segment = { module = "net.loomchild:segment", version.ref = "net-loomchild-segment" }
+tokyo-northside-segment = { module = "tokyo.northside:segment", version.ref = "tokyo-northside-segment" }
 jaxb4-api = {group = "jakarta.xml.bind", name = "jakarta.xml.bind-api", version.ref = "jaxb4_api"}
 jaxb4-xjc = {group = "org.glassfish.jaxb", name = "jaxb-xjc", version.ref = "jaxb"}
 jaxb4-core = {group = "org.glassfish.jaxb", name = "jaxb-core", version.ref = "jaxb"}
 jaxb4-runtime = {group = "org.glassfish.jaxb", name = "jaxb-runtime", version.ref = "jaxb"}
+slf4j-api = {group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j"}
+slf4j-jcl =  {group = "org.slf4j", name = "jcl-over-slf4j", version.ref = "slf4j"}
+slf4j-simple =  {group = "org.slf4j", name = "slf4j-simple", version.ref = "slf4j"}
 
 [plugins]
 spotbugs = {id = "com.github.spotbugs", version = "6.0.18"}
